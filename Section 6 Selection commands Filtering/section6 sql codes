@@ -1,0 +1,31 @@
+SELECT * FROM customer;
+SELECT * FROM product;
+SELECT * FROM sales;
+
+SELECT * FROM customer WHERE city in ('Philadelphia','Seattle');
+SELECT * FROM customer WHERE city ='Philadelphia'or city ='Seattle';
+
+
+/* between */
+SELECT * FROM customer WHERE age BETWEEN 20 AND 30;
+/*Which is same as SELECT * FROM customer WHERE age>= 20 AND age<= 30;*/
+
+SELECT * FROM customer WHERE age NOT BETWEEN 20 and 30;
+
+SELECT * FROM sales WHERE ship_date BETWEEN '2015 04 01 ' AND '2016 04 01';
+
+
+/* LIKE */
+SELECT * FROM customer WHERE customer_name LIKE 'Jo%';
+
+SELECT * FROM customer WHERE customer_name LIKE '%od%';
+
+SELECT * FROM customer WHERE customer_name LIKE 'Jas_n';
+
+SELECT * FROM customer WHERE customer_name NOT LIKE 'J%';
+
+SELECT * FROM customer WHERE customer_name LIKE 'G\%';
+
+SELECT DISTINCT city FROM customer WHERE city NOT LIKE 'S%';/*no city start with "s" character*/
+
+
