@@ -1,0 +1,25 @@
+/*The ORDER BY clause is used to sort the records in result set.
+It can only be used in SELECT statements.*/
+
+SELECT * FROM customer WHERE state = 'California' ORDER BY Customer_name;
+-- it is Same as
+SELECT * FROM customer WHERE state = 'California' ORDER BY Customer_name ASC;
+
+SELECT * FROM customer ORDER BY 2 DESC; --order by column number
+
+SELECT * FROM customer WHERE age>25 ORDER BY City ASC, Customer_name DESC;
+
+SELECT * FROM customer ORDER BY age;-- by default age will be ordred in asscending order
+
+SELECT * FROM customer ORDER BY age DESC;
+
+
+
+
+/* LIMIT statement is used to limit the number of records
+returned based on a limit value.*/
+
+SELECT * FROM customer WHERE age > 25 ORDER BY age DESC
+LIMIT 8; -- only 8 queries will be returned
+
+SELECT * FROM customer WHERE age >=25 ORDER BY age ASC LIMIT 10;
