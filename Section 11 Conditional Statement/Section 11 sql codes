@@ -1,0 +1,5 @@
+/* The CASE expression is a conditional
+expression, similar to if/else statements */
+
+SELECT *, CASE WHEN age<30 THEN 'Young' WHEN age>60 THEN 'Senior Citizen'
+ELSE 'Middle aged' END AS Age_category FROM customer;

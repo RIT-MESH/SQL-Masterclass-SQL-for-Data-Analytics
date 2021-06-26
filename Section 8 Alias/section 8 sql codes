@@ -1,0 +1,5 @@
+/*The keyword AS is used to assign an alias to the column or a table. It is inserted between the column name and the
+column alias or between the table name and the table alias.*/
+
+SELECT Customer_id AS "Serial number", Customer_name as name, Age as
+Customer_age FROM Customer;
