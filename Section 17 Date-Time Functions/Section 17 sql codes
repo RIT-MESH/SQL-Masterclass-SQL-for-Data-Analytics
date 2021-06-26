@@ -1,0 +1,23 @@
+/* CURRENT_DATE function returns the current date.
+CURRENT_TIME function returns the current time with the time zone.
+CURRENT_TIMESTAMP function returns the current date and time with the time zone. */
+SELECT CURRENT_DATE;
+SELECT CURRENT_TIME;
+SELECT CURRENT_TIME(1);
+SELECT CURRENT_TIMESTAMP;
+
+SELECT CURRENT_DATE,  CURRENT_TIME, CURRENT_TIME(1), CURRENT_TIME(3), CURRENT_TIMESTAMP;
+
+/* AGE function returns the number of years, months, and days between two dates.*/
+SELECT age ('2014 04 25 ', '2014 01 01');
+
+SELECT order_line , order_date , ship_date ,
+age (ship_date , order_date) as time_taken
+FROM sales ORDER BY time_taken DESC;
+
+/* EXTRACT function extracts parts from a date */
+SELECT EXTRACT (day from CURRENT_DATE);
+SELECT EXTRACT (day from '2014 04 25 08:44:21');
+SELECT EXTRACT (minute from '08:44:21');
+SELECT order_date, ship_date, (EXTRACT (EPOCH FROM ship_date)- EXTRACT (EPOCH FROM order_date))
+AS sec_taken FROM sales;

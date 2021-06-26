@@ -1,0 +1,33 @@
+/* The PostgreSQL LIKE condition allows you to perform pattern matching using Wildcards. */
+SELECT * FROM customer_table
+WHERE first_name LIKE 'Jo%';
+
+SELECT * FROM customer_table
+WHERE first_name LIKE '%od%';
+
+SELECT first_name , last_name FROM customer_table
+WHERE first_name LIKE 'Jas_n';
+
+SELECT first_name , last_name FROM customer_table
+WHERE last_name NOT LIKE 'J%';
+
+SELECT * FROM customer_table
+WHERE last_name LIKE 'G\%';
+
+
+/* ~ OPERATOR */
+SELECT * FROM customer
+WHERE customer_name ~* '^a+[a-z\s]+$';
+
+SELECT * FROM customer
+WHERE customer_name ~* '^(a|b|c|d )+[a-z\s]+$';
+
+SELECT * FROM customer
+WHERE customer_name ~* '^(a|b|c|d )[a-z]{3}\s[a-z]{4}$';
+
+SELECT * FROM users
+WHERE name ~* '[a-z0-9 \.\-\_]+@[a-z0-9 \-]+\.[a z]{2,5}';
+
+
+
+
